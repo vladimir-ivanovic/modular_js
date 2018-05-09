@@ -1,0 +1,24 @@
+body{
+    font-family: Arial;
+}
+input{
+    border: 1px solid grey;
+}
+button{
+    background-color: #dbffed;
+}
+li{
+    width: 100px;
+    margin-bottom: 5px;
+    text-align: right;
+    padding: 0 10px 0 0;
+    list-style-type: none;
+}
+.del {
+    text-align: right;
+    background-color: #e2ebff;
+    border-radius: 50%;
+    font-size: 11px;
+    font-style: normal;
+    padding: 3px 5px 3px 5px;
+}
