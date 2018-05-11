@@ -17,6 +17,7 @@
         },
         bindEvents: function () {
             this.$button.on('click', this.addPerson.bind(this));//The bind() method was deprecated in version 3.0. Use the on() method instead.
+            this.$ul.delegate('i.del', 'click', this.deletePerson.bind(this));
         },
         render: function () {
             var data = {
@@ -27,13 +28,14 @@
         addPerson: function () {
             this.people.push(this.$input.val());
             this.render();
+            this.$input.val('');
+        },
+        deletePerson:function (event) {
+            var $remove = $(event.target).closest('li');
+            var i = this.$ul.find('li').index($remove);
 
-
-            /**************
-             !!!!!! 13 - ti minut
-             !!!!!! 13 - ti minut
-            !!!!!! 13 - ti minut
-             **********/
+            this.people.splice(i, 1);
+            this.render();
         }
     };
 
