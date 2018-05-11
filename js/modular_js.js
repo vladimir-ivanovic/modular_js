@@ -5,6 +5,7 @@
         people:['will', 'Laura'],
         init: function () {
             this.cacheDom();
+            this.bindEvents();
             this.render();
         },
         cacheDom: function () {
@@ -14,11 +15,25 @@
             this.$ul = this.$el.find('ul');
             this.template = this.$el.find('#people-template').html();
         },
+        bindEvents: function () {
+            this.$button.on('click', this.addPerson.bind(this));//The bind() method was deprecated in version 3.0. Use the on() method instead.
+        },
         render: function () {
             var data = {
                 people: this.people
             };
             this.$ul.html(Mustache.render(this.template, data));
+        },
+        addPerson: function () {
+            this.people.push(this.$input.val());
+            this.render();
+
+
+            /**************
+             !!!!!! 13 - ti minut
+             !!!!!! 13 - ti minut
+            !!!!!! 13 - ti minut
+             **********/
         }
     };
 
