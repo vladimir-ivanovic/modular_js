@@ -1,5 +1,9 @@
 body{
     font-family: Arial;
+    text-align: center;
+}
+.stats{
+    background-color: #D3D3D3;
 }
 input{
     border: 1px solid grey;
